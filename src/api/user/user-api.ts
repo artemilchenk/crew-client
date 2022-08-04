@@ -8,6 +8,7 @@ export async function logUser({body, setLoading, setData, setError, dispatch}: I
     try {
         setError(null)
         setLoading(true)
+        console.log(process.env.REACT_APP_API);
         const response = await axios.post(`${process.env.REACT_APP_API}user/login`, {...body})
         if (!localStorage.getItem('token')) {
             localStorage.setItem('token', JSON.stringify({
