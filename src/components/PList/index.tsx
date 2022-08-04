@@ -6,7 +6,7 @@ import { Paginator } from "../Paginator";
 export const PListComponent = ({data}) => {
   const [searchParams] = useSearchParams({});
   return <div className={stylesApp.main}>
-    {data?.posts.length ? <>
+    {data?.posts?.length ? <>
       <Paginator count={data?.count} />
       {data?.posts.map(post => <PostComponent key={post._id} post={post} />)}
     </> : null}
