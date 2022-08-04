@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IGetPost, IServerPost } from "../types/user";
 import axios, { AxiosError } from "axios";
+import {ServerURL} from "../domen";
 
 export function useGetPost(id) {
   const [loading, setLoading] = useState(false);
@@ -11,7 +12,7 @@ export function useGetPost(id) {
     try {
       setError(null);
       setLoading(true);
-      const response = await axios.get(`${process.env.REACT_APP_API}post/${id}`);
+      const response = await axios.get(`${ServerURL.PRODUCTION}post/${id}`);
       setData(response.data);
       setLoading(false);
 

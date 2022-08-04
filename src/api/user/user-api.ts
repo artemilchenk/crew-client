@@ -2,14 +2,14 @@ import {IGetUser, ILogUser} from "../../types/user";
 import axios, {AxiosError} from "axios";
 import {setUser} from "../../features/user/userSlice";
 import {setForm} from "../../features/form/formSlice";
+import {ServerURL} from "../../domen";
 
 export async function logUser({body, setLoading, setData, setError, dispatch}: ILogUser) {
 
     try {
         setError(null)
         setLoading(true)
-        console.log(process.env.REACT_APP_API);
-        const response = await axios.post(`${process.env.REACT_APP_API}user/login`, {...body})
+        const response = await axios.post(`${ServerURL.PRODUCTION}user/login`, {...body})
         if (!localStorage.getItem('token')) {
             localStorage.setItem('token', JSON.stringify({
                 token: response?.data?.token || '',
@@ -39,7 +39,7 @@ export async function getUser({dispatch}: IGetUser) {
             const token = tokenObj.token
             const name = tokenObj.user.name
 
-            const response = await axios.post(`${process.env.REACT_APP_API}user`, {name}, {
+            const response = await axios.post(`${ServerURL.PRODUCTION}user`, {name}, {
                 headers: {Authorization: `Bearer ${token}`}
             })
             dispatch(setUser(response?.data?.user))

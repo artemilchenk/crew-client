@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../store";
 import axios, { AxiosError } from "axios";
 import { setRequestCreateDeletePost } from "../../features/post/postSlice";
 import { useNavigate } from "react-router-dom";
+import {ServerURL} from "../../domen";
 
 
 export const PostComponent = ({ post }) => {
@@ -19,7 +20,7 @@ export const PostComponent = ({ post }) => {
         const tokenObj = JSON.parse(localStorage.getItem("token") || "");
         const token = tokenObj.token;
 
-        const response = await axios.post(`${process.env.REACT_APP_API}post/delete`, { id: post._id }, {
+        const response = await axios.post(`${ServerURL.PRODUCTION}post/delete`, { id: post._id }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         dispatch(setRequestCreateDeletePost(new Date()));

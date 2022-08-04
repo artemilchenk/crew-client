@@ -10,6 +10,7 @@ import { createComment } from "../../api/comment/comment-api";
 import { useGetComments } from "../../hook/useGetComments";
 import { setRequestCreateDeleteComment } from "../../features/comment/commentSlice";
 import { CommentComponent } from "../../components/Comment";
+import {ServerURL} from "../../domen";
 
 
 export const PostPage = () => {
@@ -36,7 +37,7 @@ export const PostPage = () => {
         const tokenObj = JSON.parse(localStorage.getItem("token") || "");
         const token = tokenObj.token;
 
-        const response = await axios.post(`${process.env.REACT_APP_API}post/delete`, { id: data?.post._id }, {
+        const response = await axios.post(`${ServerURL.PRODUCTION}post/delete`, { id: data?.post._id }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         navigate(`/`);

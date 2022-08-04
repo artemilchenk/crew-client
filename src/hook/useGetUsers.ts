@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {IServerUser} from "../types/user";
 import axios, {AxiosError} from "axios";
+import {ServerURL} from "../domen";
 
 export function useGetUsers (request){
     const [loading, setLoading] = useState(false)
@@ -8,11 +9,10 @@ export function useGetUsers (request){
     const [error, setError] = useState(null)
 
     async function getUsers() {
-        console.log('env----', typeof process.env.REACT_APP_API, process.env.REACT_APP_API)
         try {
             setError(null)
             setLoading(true)
-            const response = await axios.get(`${process.env.REACT_APP_API}user/all`)
+            const response = await axios.get(`${ServerURL.PRODUCTION}user/all`)
             setData(response.data.users)
             setLoading(false)
 

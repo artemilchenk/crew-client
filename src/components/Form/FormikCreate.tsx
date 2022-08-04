@@ -7,6 +7,7 @@ import {useAppDispatch, useAppSelector} from "../../store";
 import styles from '../Form/Form.module.scss'
 import {setRequestCreateDeletePost} from "../../features/post/postSlice";
 import {CreateForm} from "./Create";
+import {ServerURL} from "../../domen";
 
 export const FormikCreate = () => {
     const isForm = useAppSelector(state => state.form.isForm)
@@ -25,7 +26,7 @@ export const FormikCreate = () => {
                 const name = tokenObj.user.name
                 setError(null)
                 setLoading(true)
-                const response = await axios.post(`${process.env.REACT_APP_API}post/create`, {...body, owner: name}, {
+                const response = await axios.post(`${ServerURL.PRODUCTION}post/create`, {...body, owner: name}, {
                     headers: {Authorization: `Bearer ${token}`}
                 })
                 setData(response.data)

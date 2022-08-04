@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IProfileResponse, IServerUser } from "../types/user";
 import axios, { AxiosError } from "axios";
+import {ServerURL} from "../domen";
 
 export function useGetProfile(id, request) {
   const [loading, setLoading] = useState(false);
@@ -11,7 +12,7 @@ export function useGetProfile(id, request) {
     try {
       setError(null);
       setLoading(true);
-      const response = await axios.get(`${process.env.REACT_APP_API}profile/${id}`);
+      const response = await axios.get(`${ServerURL.PRODUCTION}profile/${id}`);
       setData(response.data);
       setLoading(false);
 

@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import { IGetComments, IGetPosts, IServerUser } from "../types/user";
 import axios, {AxiosError} from "axios";
+import {ServerURL} from "../domen";
 
 export function useGetComments (request, targetId){
   const [loading, setLoading] = useState(false)
@@ -11,7 +12,7 @@ export function useGetComments (request, targetId){
     try {
       setError(null)
       setLoading(true)
-      const response = await axios.get(`${process.env.REACT_APP_API}comment/all/${targetId}`)
+      const response = await axios.get(`${ServerURL.PRODUCTION}comment/all/${targetId}`)
       setData(response.data)
       setLoading(false)
 

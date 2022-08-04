@@ -6,6 +6,7 @@ import {setForm, setFormResponse} from "../../features/form/formSlice";
 import {useAppDispatch, useAppSelector} from "../../store";
 import styles from '../Form/Form.module.scss'
 import {setRequestCreateDeleteUser} from "../../features/user/userSlice";
+import {ServerURL} from "../../domen";
 
 export const FormikRegister = () => {
     const isForm = useAppSelector(state => state.form.isForm)
@@ -19,7 +20,7 @@ export const FormikRegister = () => {
         try {
             setError(null)
             setLoading(true)
-            const response = await axios.post(`${process.env.REACT_APP_API}user/register`, {...body})
+            const response = await axios.post(`${ServerURL.PRODUCTION}user/register`, {...body})
             setData(response.data)
             setLoading(false)
             dispatch(setFormResponse(response.data.message))
