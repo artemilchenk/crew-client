@@ -1,0 +1,17 @@
+@import "../commons";
+
+.search {
+  display: flex;
+  width: 100%;
+  padding: 12px 18px 12px 6px;
+  background-color: $secondary-color;
+  margin-top: 12px;
+
+  &__field{
+    background-color: inherit;
+    margin-right: 8px;
+    width: 100%;
+    color: $primary-color-text;
+  }
+
+}

@@ -1,0 +1,35 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.formik {
+  width: 300px;
+  margin-bottom: 22px;
+}
+.formik__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: #282C33;
+  width: 400px;
+  height: max-content;
+  overflow-y: scroll;
+}
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+}
+
+/*# sourceMappingURL=Form.module.css.map */

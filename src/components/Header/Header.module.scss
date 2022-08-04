@@ -1,0 +1,40 @@
+@import "../commons";
+
+.header {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  width: 100%;
+  align-self: center;
+  max-width: 1200px;
+  border-bottom: 1px solid $secondary-color;
+
+  &__nav {
+    display: flex;
+  }
+
+
+
+  &__item {
+    width: 100px;
+    margin-left: 12px;
+    margin-right: 12px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #282C33;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: max-content;
+    }
+  }
+
+  &__item_waiting{
+    border: 1px solid darkred;
+  }
+
+}

@@ -1,0 +1,36 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.comment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #282C33;
+  margin: 8px;
+  padding: 8px 52px 8px 0;
+}
+.comment__item {
+  width: 400px;
+  background-color: #1E1E1E;
+  margin-bottom: 4px;
+  padding: 4px;
+}
+.comment__deleteicon {
+  cursor: pointer;
+  position: absolute;
+  color: darkred;
+  opacity: 0.4;
+  z-index: 10;
+  right: 10px;
+  bottom: 5px;
+}
+
+/*# sourceMappingURL=Comment.module.css.map */

@@ -1,0 +1,45 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.header {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  width: 100%;
+  align-self: center;
+  max-width: 1200px;
+  border-bottom: 1px solid #282C33;
+}
+.header__nav {
+  display: flex;
+}
+.header__item {
+  width: 100px;
+  margin-left: 12px;
+  margin-right: 12px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.header__item:hover {
+  cursor: pointer;
+  background-color: #282C33;
+}
+@media screen and (max-width: 800px) {
+  .header__item {
+    width: max-content;
+  }
+}
+.header__item_waiting {
+  border: 1px solid darkred;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

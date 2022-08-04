@@ -1,0 +1,61 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.post {
+  position: relative;
+  width: 300px;
+  margin: 12px;
+  padding: 16px 48px 16px 16px;
+  background-color: #282C33;
+}
+.post:hover {
+  cursor: pointer;
+}
+.post__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.post__primary {
+  font-size: 22px;
+}
+.post__secondary {
+  opacity: 0.5;
+}
+.post__sub {
+  position: absolute;
+  font-size: 14px;
+  color: #1E1E1E;
+  z-index: 10;
+  right: 10px;
+  font-weight: 900;
+  top: 5px;
+}
+.post__prefer {
+  font-size: 12px;
+  font-weight: 400;
+}
+.post__delete {
+  position: absolute;
+  font-size: 14px;
+  z-index: 10;
+  bottom: 5px;
+  right: 10px;
+  font-weight: 900;
+  color: darkred;
+  opacity: 0.4;
+}
+.post__delete:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=Comment.module.css.map */

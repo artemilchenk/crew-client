@@ -1,0 +1,25 @@
+@import "../commons";
+.formik {
+  width: 300px;
+  margin-bottom: 22px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form {
+  background-color: $secondary-color;
+  width: 400px;
+  height: max-content;
+  overflow-y: scroll;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+  }
+}

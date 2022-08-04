@@ -1,0 +1,32 @@
+@import "../commons";
+
+.comment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  margin: 8px;
+  padding: 8px 52px 8px 0;
+
+  &__text {
+
+  }
+
+  &__item {
+    width: 400px;
+    background-color: $primary-color;
+    margin-bottom: 4px;
+    padding: 4px;
+  }
+
+  &__deleteicon{
+    cursor: pointer;
+    position: absolute;
+    color: darkred;
+    opacity: 0.4;
+    z-index: 10;
+    right: 10px;
+    bottom: 5px;
+  }
+
+}
