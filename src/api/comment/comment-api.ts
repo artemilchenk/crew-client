@@ -1,5 +1,6 @@
 
 import axios, { AxiosError } from "axios";
+import {ServerURL} from "../../domen";
 
 export async function createComment({dispatch, targetId, value, target}) {
 
@@ -10,7 +11,7 @@ export async function createComment({dispatch, targetId, value, target}) {
       const token = tokenObj.token
       const name = tokenObj.user.name
 
-      const response = await axios.post(`http://localhost:5001/comment/create`, {
+      const response = await axios.post(`${ServerURL.PRODUCTION}comment/create`, {
         targetId,
         text: value,
         owner: name,
