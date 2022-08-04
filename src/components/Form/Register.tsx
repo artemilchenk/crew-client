@@ -54,8 +54,10 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
             </div>
 
             <button type='submit' disabled={isSubmitting} onClick={()=>{
-                onSubmit(values)
-                resetForm()
+                if(Object.keys(errors).length < 1){
+                    onSubmit(values)
+                    resetForm()
+                }
             }}>
                 Submit
             </button>
