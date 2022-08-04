@@ -1,3 +1,4 @@
+import { ServerURL } from '../../domen'
 import { useAppDispatch, useAppSelector } from "../../store";
 import styles from "./Comment.module.scss";
 import { AiOutlineDelete } from "@react-icons/all-files/ai/AiOutlineDelete";
@@ -19,7 +20,7 @@ export const CommentComponent = ({ comment }) => {
         const tokenObj = JSON.parse(localStorage.getItem("token") || "");
         const token = tokenObj.token;
 
-        const response = await axios.post(`http://localhost:5001/comment/delete/${comment._id}`, { target: 'post', targetId: id }, {
+        const response = await axios.post(`${ServerURL.PRODUCTION}comment/delete/${comment._id}`, { target: 'post', targetId: id }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         dispatch(setRequestCreateDeleteComment(new Date()))

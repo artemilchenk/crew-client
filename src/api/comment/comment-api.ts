@@ -20,8 +20,6 @@ export async function createComment({dispatch, targetId, value, target}) {
         headers: {Authorization: `Bearer ${token}`}
       });
       console.log(response);
-
-      /*dispatch(setRequestUpdateUser(new Date()))*/
     }
 
   } catch (err) {
