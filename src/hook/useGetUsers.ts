@@ -8,6 +8,7 @@ export function useGetUsers (request){
     const [error, setError] = useState(null)
 
     async function getUsers() {
+        console.log('env----', typeof process.env.REACT_APP_API, process.env.REACT_APP_API)
         try {
             setError(null)
             setLoading(true)
