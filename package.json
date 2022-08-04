@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false && react-scripts build",
     "lint": "eslint src/**/*.{ts,tsx} --cache --color --max-warnings=0",
     "lint:css": "stylelint './src/**/*.{scss, sass, css}' --cache --color --aei --max-warnings=0",
     "typecheck": "tsc --noEmit",
